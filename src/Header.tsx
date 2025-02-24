@@ -8,22 +8,27 @@ export function Header() {
         <div>
           <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
             <li>
-              <a href="#" className="nav-link px-2 header-font">
+              <a href="/" className="nav-link px-2 header-font">
                 Home
               </a>
             </li>
             <li>
-              <a href="#" className="nav-link px-2 header-font">
+              <a href="/about" className="nav-link px-2 header-font">
                 About
               </a>
             </li>
             <li>
-              <a href="#" className="nav-link px-2 header-font">
+              <a href="/resume" className="nav-link px-2 header-font">
+                Resume
+              </a>
+            </li>
+            <li>
+              <a href="/projects" className="nav-link px-2 header-font">
                 Projects
               </a>
             </li>
             <li>
-              <a href="#" className="nav-link px-2 header-font">
+              <a href="/contact" className="nav-link px-2 header-font">
                 Contact
               </a>
             </li>

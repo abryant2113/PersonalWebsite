@@ -1,36 +1,37 @@
 import React from "react";
-import "./App.css";
-import { Header } from "./Header";
-import { Footer } from "./Footer";
-import RoundedRectangle from "./RoundedRectangle";
+import Homepage from "./Homepage";
+import About from "./About";
+import Resume from "./Resume";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 function App() {
   return (
-    <div className="homepage">
-      <Header />
-      <div className="vertical-filler"></div>
-      <div className="center-item">
-        <RoundedRectangle
-          width="30%"
-          height="100%"
-          borderRadius={10}
-          backgroundColor="#bcc0d6"
-        >
-          <div className="blurb-text">
-            <h1 className="intro-header">
-              Austin Bryant <br /> <br />
-            </h1>
-            <p className="intro-subtext">
-              Professional Software Engineer with over six years of experience
-              building production-ready, scalable cloud solutions.
-            </p>
-          </div>
-        </RoundedRectangle>
-      </div>
-      <div className="bottom-vertical-filler"></div>
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/resume" element={<ResumePage />} />
+        <Route path="*" element={<NotFound />} />{" "}
+        {/* Catch-all route for 404s */}
+      </Routes>
+    </BrowserRouter>
   );
+}
+
+function HomePage() {
+  return <Homepage />;
+}
+
+function AboutPage() {
+  return <About />;
+}
+
+function ResumePage() {
+  return <Resume />;
+}
+
+function NotFound() {
+  return <h1>404 Not Found.</h1>;
 }
 
 export default App;
